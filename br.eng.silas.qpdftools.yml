@@ -41,5 +41,5 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
     sources:
       - type: archive
-        url: https://github.com/silash35/qpdftools/archive/refs/tags/v3.0.1.tar.gz
-        sha256: f1ce9ea30e05d0953dbc848f7d10ce8b020a05465e4b625c9616035232461c8c
+        url: https://github.com/silash35/qpdftools/archive/refs/tags/v3.1.0.tar.gz
+        sha256: 6a1a1a2b5e4942e82d73a4e6332f648f3b9be895b1b9fc445bd1dad2b1d6bba9
