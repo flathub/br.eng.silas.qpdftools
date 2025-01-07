@@ -1,6 +1,6 @@
 id: br.eng.silas.qpdftools
 runtime: org.kde.Platform
-runtime-version: '6.6'
+runtime-version: '6.8'
 sdk: org.kde.Sdk
 command: qpdftools
 cleanup:
@@ -15,15 +15,18 @@ finish-args:
   - --device=dri
 modules:
   - name: ghostscript
-    buildsystem: autotools
     config-opts:
       - --disable-cups
       - --disable-dbus
-      - --disable-gt
+      - --disable-gtk
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10021/ghostscript-10.02.1.tar.gz
-        sha256: e429e4f5b01615a4f0f93a4128e8a1a4d932dff983b1774174c79c0630717ad9
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.gz
+        sha256: c764dfbb7b13fc71a7a05c634e014f9bb1fb83b899fe39efc0b6c3522a9998b1
+        x-checker-data:
+          - type: anitya
+            id: 1157
+            url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${major}0$minor$patch/ghostscript-$version.tar.gz
 
   - name: qpdf
     buildsystem: cmake-ninja
@@ -32,14 +35,22 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
     sources:
       - type: archive
-        url: https://github.com/qpdf/qpdf/archive/refs/tags/v11.8.0.tar.gz
-        sha256: 28911f31a836606236c1d6d6763b25c874b53d4a830c8147e4abb2d10918343e
+        url: https://github.com/qpdf/qpdf/archive/refs/tags/v11.9.1.tar.gz
+        sha256: 98d509e29def377d90ff4a34e48e8e20865600342006bff53e489f689bbbb15d
+        x-checker-data:
+          - type: anitya
+            id: 5542
+            url-template: https://github.com/qpdf/qpdf/archive/refs/tags/v$version.tar.gz
 
   - name: qpdftools
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
     sources:
-      - type: archive
-        url: https://github.com/silash35/qpdftools/archive/refs/tags/v3.1.1.tar.gz
-        sha256: e34120634a2dbe711b148434dba647389782b2b1c34ece8d1704755f0f31ebca
+      - type: git
+        url: https://github.com/silash35/qpdftools.git
+        tag: v3.1.1
+        commit: 3aff30f4820cd071f48d5e3892c6a0ed472f2c7c
+        x-checker-data:
+          - type: git
+            tag-pattern: v([\d.]+)$
