@@ -35,8 +35,8 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
     sources:
       - type: archive
-        url: https://github.com/qpdf/qpdf/archive/refs/tags/v11.9.1.tar.gz
-        sha256: 98d509e29def377d90ff4a34e48e8e20865600342006bff53e489f689bbbb15d
+        url: https://github.com/qpdf/qpdf/archive/refs/tags/v11.10.1.tar.gz
+        sha256: cb691932fd2935c575fb6f4c93a9aa7ae60a0f167c3b51fbe0029d2134f27199
         x-checker-data:
           - type: anitya
             id: 5542
@@ -49,8 +49,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/silash35/qpdftools.git
-        tag: v3.1.1
-        commit: 3aff30f4820cd071f48d5e3892c6a0ed472f2c7c
+        tag: v3.1.2
+        commit: df1332dcd1db06f2f614839b166e5b74522a4d1f
         x-checker-data:
           - type: git
             tag-pattern: v([\d.]+)$
