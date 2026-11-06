@@ -24,9 +24,9 @@ modules:
         url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.gz
         sha256: 5bd6da34794928cc7e616f288e32bd0be7f9a5ca2d3c206a0af2c19a4e3a318f
         x-checker-data:
-          - type: anitya
-            id: 1157
-            url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${major}0$minor$patch/ghostscript-$version.tar.gz
+          type: anitya
+          project-id: 1157
+          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${major}${minor}${patch}/ghostscript-$version.tar.gz
 
   - name: qpdf
     buildsystem: cmake-ninja
@@ -38,9 +38,9 @@ modules:
         url: https://github.com/qpdf/qpdf/archive/refs/tags/v12.2.0.tar.gz
         sha256: 2d004611699a94030a594318393f08a7352ab1cf3cee337c5312d4e7eb7f8a4f
         x-checker-data:
-          - type: anitya
-            id: 5542
-            url-template: https://github.com/qpdf/qpdf/archive/refs/tags/v$version.tar.gz
+          type: anitya
+          project-id: 5542
+          url-template: https://github.com/qpdf/qpdf/archive/refs/tags/v$version.tar.gz
 
   - name: qpdftools
     buildsystem: cmake-ninja
@@ -52,5 +52,5 @@ modules:
         tag: v3.1.3
         commit: 22da16c6c69e7831a374ade5456816eeca8d3773
         x-checker-data:
-          - type: git
-            tag-pattern: v([\d.]+)$
+          type: git
+          tag-pattern: v([\d.]+)$
