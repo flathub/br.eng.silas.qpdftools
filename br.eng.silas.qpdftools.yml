@@ -4,9 +4,9 @@ runtime-version: '6.10'
 sdk: org.kde.Sdk
 command: qpdftools
 cleanup:
-  - '/include'
-  - '/share/doc'
-  - '/share/man'
+  - /include
+  - /share/doc
+  - /share/man
 finish-args:
   - --socket=wayland
   - --socket=fallback-x11
@@ -21,8 +21,8 @@ modules:
       - --disable-gtk
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.gz
-        sha256: 5bd6da34794928cc7e616f288e32bd0be7f9a5ca2d3c206a0af2c19a4e3a318f
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostscript-10.08.0.tar.gz
+        sha256: caf199e3f233f1290b27d0972d636f66c303355f2353309b7bfddf1edda06b3d
         x-checker-data:
           type: anitya
           project-id: 1157
@@ -35,8 +35,8 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
     sources:
       - type: archive
-        url: https://github.com/qpdf/qpdf/archive/refs/tags/v12.2.0.tar.gz
-        sha256: 2d004611699a94030a594318393f08a7352ab1cf3cee337c5312d4e7eb7f8a4f
+        url: https://github.com/qpdf/qpdf/archive/refs/tags/v12.4.2.tar.gz
+        sha256: 88ddeb5f25c6e9156f3113fc3994d3a5e0cdfeee398cd09dd00fabc9dac9f573
         x-checker-data:
           type: anitya
           project-id: 5542
